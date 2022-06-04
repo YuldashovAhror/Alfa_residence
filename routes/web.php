@@ -30,3 +30,4 @@ Route::middleware([
 
 
 Route::get('/phase',[PhaseController::class,'index'])->name('phase');
+Route::get('/phase/create',[PhaseController::class,'create'])->name('phase.create');

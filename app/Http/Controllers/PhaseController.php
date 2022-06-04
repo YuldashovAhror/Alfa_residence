@@ -13,7 +13,7 @@ class PhaseController extends Controller
      */
     public function index()
     {
-        return view('Admin.phase');
+        return view('Admin.Phase.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class PhaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Phase.create');
     }
 
     /**
