@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Type;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
-class Type extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,8 @@ class Type extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        return view('Admin.Type.index',['types'=>$types]);
     }
 
     /**
@@ -34,7 +37,16 @@ class Type extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $types = new Type;
+        if($request->has('img')){
+            $img_name = Str::random(10).'.'.$request->file('img')->getClientOriginalExtension();
+            $request->img->move(public_path('/images/type'), $img_name);
+            $types->photo = '/images/type/'.$img_name;
+        }
+        
+        $types->name = $request->name;
+        $types->save();
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +68,8 @@ class Type extends Controller
      */
     public function edit($id)
     {
-        //
+        $types = Type::find($id);
+        return view('Admin.Type.edit',['types'=>$types]);
     }
 
     /**
@@ -68,7 +81,16 @@ class Type extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $types = Type::find($id);
+        if($request->has('img')){
+            $img_name = Str::random(10).'.'.$request->file('img')->getClientOriginalExtension();
+            $request->img->move(public_path('/images/type'), $img_name);
+            $types->photo = '/images/type/'.$img_name;
+        }
+        
+        $types->name = $request->name;
+        $types->save();
+        return redirect()->route('type');
     }
 
     /**
@@ -79,6 +101,8 @@ class Type extends Controller
      */
     public function destroy($id)
     {
-        //
+        $types = Type::find($id);
+        $types->delete();
+        return redirect()->back();
     }
 }

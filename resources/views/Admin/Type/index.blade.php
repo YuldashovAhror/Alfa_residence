@@ -12,11 +12,15 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="{{ Route('phase.store') }}" method="POST">
+                                <form action="{{ Route('type.store') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="" style="width: 80%;" >
                                         <label for="name">Name</label>
                                         <input type="text"class="form-control" id="name" name="name" placeholder="Add Phase name ...">
+                                    </div>
+                                    <div class="" style="width: 80%; padding-top:5px" >
+                                        <label for="img">Photo</label>
+                                        <input type="file"class="form-control" id="img" name="img" placeholder="Add Phase name ...">
                                     </div>
                                     <div>
                                         <button type="submit" class="btn btn-primary" style="margin: 10px 10px 15px 20px">Submit</button>
@@ -34,26 +38,28 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Photo</th>
                     </tr>
                 </thead>
                 <tbody>
                     
                     <?php $num=1; ?>
-                    @foreach($phases as $phase)
+                    @foreach($types as $type)
                         <tr>
                             <td>{{$num++}}</td>
-                            <td>{{$phase->name}}</td>
+                            <td>{{$type->name}}</td>
+                            <td><img style="width: 200px; height:150px" src="{{$type->photo}}" alt=""></td>
                             
                             
                             <td>
-                                <form action="{{route('phase.edit', $phase->id )}}" method="get" style="margin-bottom: 5px;">
+                                <form action="{{route('type.edit', $type->id )}}" method="get" style="margin-bottom: 5px;">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">Edit</button>
                                 </form>
-                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ $phase->id }}">Delete</a>
+                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ $type->id }}">Delete</a>
                             </td>
 
-                            <div id="myModal{{ $phase->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div id="myModal{{ $type->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -62,7 +68,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{route('phase.destroy', $phase->id)}}" method="POST">
+                                            <form action="{{route('type.destroy', $type->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">O'chirish</button>

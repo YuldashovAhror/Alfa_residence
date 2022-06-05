@@ -47,6 +47,34 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{route('building')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">03</span>
+                        <span>Buildings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('floor')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">04</span>
+                        <span>Floor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('type')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">05</span>
+                        <span>Type</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('flat')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">06</span>
+                        <span>Flat</span>
+                    </a>
+                </li>
+
                 {{-- <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-window-section"></i>
