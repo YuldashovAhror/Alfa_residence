@@ -1,71 +1,80 @@
 <x-app-layout>
     <div class="col-12">
         <div class="card">
-            <div class="card__handler">
-                <div class="first__card">
-                    <h1>The select element</h1>
+            <form action="/action_page.php">
+                <div class="card__handler">
+                    <div class="first__card">
+                        <h1>The Phase elements</h1>
 
-                    <form action="/action_page.php">
-                        <label for="cars">Choose a car:</label>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
+                            <label for="cars">Choose a Phase:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                    
+                    </div>
 
-                <div class="second__card">
-                    <h1>The select element</h1>
+                    <div class="second__card">
+                        <h1>The Building element</h1>
 
-                    <form action="/action_page.php">
-                        <label for="cars">Choose a car:</label>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
+                        
+                            <label for="cars">Choose a Building:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                    
+                    </div>
 
-                <div class="third__card">
-                    <h1>The select element</h1>
+                    <div class="third__card">
+                        <h1>The Floor element</h1>
 
-                    <form action="/action_page.php">
-                        <label for="cars">Choose a car:</label>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
+                    
+                            <label for="cars">Choose a Floor:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                        
+                    </div>
 
-                <div class="fourth__card">
-                    <h1>The select element</h1>
+                    <div class="fourth__card">
+                        <h1>The Type element</h1>
 
-                    <form action="/action_page.php">
-                        <label for="cars">Choose a car:</label>
-                        <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
-                        </select>
-                        <br><br>
-                        <input type="submit" value="Submit">
-                    </form>
+                    
+                            <label for="cars">Choose a Type:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <label for="name">Flat Name</label>
+                        <input type="text" name="name">
+                    </div>
+                    
+                    <div>
+                        <label for="name">Flat Quantity</label>
+                        <input type="text" name="quantity">
+                    </div>
+                    
                 </div>
             </div>
+
+            </form>
         </div>
         <style>
             .card__handler {
@@ -90,4 +99,8 @@
             }
         </style>
     </div>
+
+
+
+
 </x-app-layout>
