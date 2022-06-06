@@ -1,7 +1,9 @@
 <x-app-layout>
     <div class="col-12">
         <div class="card">
-            <form action="{{route('flat.store')}}" method="POST">
+            <form action="{{route('flat.update', $flats->id)}}" method="POST">
+                
+                @method('PUT')
                 @csrf
                 <div class="card__handler">
                     <div class="first__card">
@@ -18,7 +20,7 @@
                             <br>
                             <label class="name" for="">Name:</label>
                             <br>
-                            <input class="input" type="text" name="name">
+                            <input class="input" type="text" name="name" value="{{$flats->name}}">
                         
                     </div>
 
@@ -37,7 +39,7 @@
                             <br>
                             <label class="name" for="">Size:</label>
                             <br>
-                            <input class="input" type="text" name="size">
+                            <input class="input" type="text" name="size" value="{{$flats->size }}">
                         
                     </div>
 
@@ -56,7 +58,7 @@
                             <br>
                             <label class="name" for="">quantity:</label>
                             <br>
-                            <input class="input" type="text" name="quantity">
+                            <input class="input" type="text" name="quantity" value="{{$flats->quantity}}">
                     </div>
 
                     <div class="fourth__card" class="name" style="margin-top: -6rem">
@@ -74,7 +76,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem "  >Add</button>
+                    <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem ">Update</button>
             </form>
 
         </div>

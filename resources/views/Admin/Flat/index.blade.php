@@ -15,22 +15,24 @@
                 </thead>
                 <tbody>
                     
-                    {{-- <?php $num=1; ?>
-                    @foreach($floors as $floor)
+                    <?php $num=1; ?>
+                    @foreach($flats as $flat)
                         <tr>
                             <td>{{$num++}}</td>
-                            <td>{{$floor->name}}</td>
+                            <td>{{$flat->name}}</td>
+                            <td>{{$flat->size}}</td>
+                            <td>{{$flat->quantity}}</td>
                             
                             
                             <td>
-                                <form action="{{route('floor.edit', $floor->id )}}" method="get" style="margin-bottom: 5px;">
+                                <form action="{{route('flat.edit', $flat->id )}}" method="get" style="margin-bottom: 5px;">
                                     @csrf
                                     <button type="submit" class="btn btn-primary">Edit</button>
                                 </form>
-                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ $floor->id }}">Delete</a>
+                                <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ $flat->id }}">Delete</a>
                             </td>
 
-                            <div id="myModal{{ $floor->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div id="myModal{{ $flat->id }}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -39,7 +41,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{route('floor.destroy', $floor->id)}}" method="POST">
+                                            <form action="{{route('flat.destroy', $flat->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">O'chirish</button>
@@ -49,7 +51,7 @@
                                 </div>
                             </div>
                         </tr>
-                    @endforeach --}}
+                    @endforeach 
                 </tbody>
             </table>
             {{-- {{ $news->links() }} --}}
