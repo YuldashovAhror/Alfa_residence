@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Building;
+use App\Models\Phase;
 
-class Building extends Controller
+class BuildingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,12 @@ class Building extends Controller
      */
     public function index()
     {
-        //
+        $phases = Phase::orderBy('updated_at','desc')->get();
+        $buildings = Building::orderBy('updated_at','desc')->get();
+        return view('Admin.building.index', [
+            'phases' => $phases,
+            'buildings' => $buildings
+        ]);
     }
 
     /**
@@ -34,7 +41,12 @@ class Building extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $buildings = new Building;
+        $buildings->phase_id = $request->phase;
+        $buildings->name = $request->name;
+        $buildings->save();
+        return redirect()->back();
+
     }
 
     /**
@@ -56,7 +68,10 @@ class Building extends Controller
      */
     public function edit($id)
     {
-        //
+        $buildings = Building::find($id);
+        $phases = Phase::orderBy('updated_at','desc')->get();
+
+        return view('Admin.building.edit',['buildings'=>$buildings],['phases'=>$phases]);
     }
 
     /**
@@ -68,7 +83,11 @@ class Building extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $buildings = Building::find($id);
+        $buildings->phase_id = $request->phase;
+        $buildings->name = $request->name;
+        $buildings->save();
+        return redirect()->Route('building');
     }
 
     /**
@@ -79,6 +98,8 @@ class Building extends Controller
      */
     public function destroy($id)
     {
-        //
+        $buildings = Building::find($id);
+        $buildings->delete();
+        return redirect()->back();
     }
 }

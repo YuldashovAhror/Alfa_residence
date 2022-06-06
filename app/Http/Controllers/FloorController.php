@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Building;
+use App\Models\Floor;
+use App\Models\Phase;
 
-class Floor extends Controller
+class FloorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,14 @@ class Floor extends Controller
      */
     public function index()
     {
-        //
+        $floors = Floor::orderBy('updated_at','desc')->get();
+        $buildings = Building::orderBy('updated_at','desc')->get();
+        $phases = Phase::orderBy('updated_at','desc')->get();
+        return view('Admin.Floor.index', [
+            'floors' => $floors,
+            'buildings' => $buildings,
+            'phases' => $phases
+        ]);
     }
 
     /**
@@ -34,7 +44,13 @@ class Floor extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $floors = new Floor;
+        $floors->building_id = $request->building;
+        $floors->phase_id = $request->phase;
+        $floors->name = $request->name;
+        $floors->save();
+        return redirect()->back();
+
     }
 
     /**
@@ -56,7 +72,15 @@ class Floor extends Controller
      */
     public function edit($id)
     {
-        //
+        $floors = Floor::find($id);
+        $buildings = Building::orderBy('updated_at','desc')->get();
+        $phases = Phase::orderBy('updated_at','desc')->get();
+
+        return view('Admin.Floor.edit', [
+            'floors' => $floors,
+            'phases' => $phases,
+            'buildings' => $buildings
+        ]);
     }
 
     /**
@@ -68,7 +92,12 @@ class Floor extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $floors = Floor::find($id);
+        $floors->phase_id = $request->phase;
+        $floors->building_id = $request->building;
+        $floors->name = $request->name;
+        $floors->save();
+        return redirect()->Route('floor');
     }
 
     /**
@@ -79,6 +108,8 @@ class Floor extends Controller
      */
     public function destroy($id)
     {
-        //
+        $floors = Floor::find($id);
+        $floors->delete();
+        return redirect()->back();
     }
 }

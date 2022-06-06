@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Phase;
 
 class PhaseController extends Controller
 {
@@ -13,7 +14,8 @@ class PhaseController extends Controller
      */
     public function index()
     {
-        return view('Admin.phase');
+        $phases = Phase::orderBy('updated_at','desc')->get();
+        return view('Admin.Phase.index',['phases'=>$phases]);
     }
 
     /**
@@ -23,7 +25,7 @@ class PhaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('Admin.Phase.create');
     }
 
     /**
@@ -34,7 +36,11 @@ class PhaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $phases = new Phase;
+        $phases->name = $request->name;
+        $phases->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -56,7 +62,8 @@ class PhaseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $phases = Phase::find($id);
+        return view('Admin.Phase.edit',['phases'=>$phases]);
     }
 
     /**
@@ -68,7 +75,11 @@ class PhaseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $phases = Phase::find($id);
+        $phases->name = $request->name;
+        $phases->save();
+
+        return redirect()->route('phase');
     }
 
     /**
@@ -79,6 +90,8 @@ class PhaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $phases = Phase::find($id);
+        $phases->delete();
+        return redirect()->back();
     }
 }

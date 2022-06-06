@@ -4,19 +4,19 @@
     <div class="navbar-brand-box">
         <a href="index.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="assets/images/logo-dark.png" alt="" height="20">
+                <img src="/assets/images/logo-dark.png" alt="" height="20">
             </span>
         </a>
 
         <a href="index.html" class="logo logo-light">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="assets/images/logo-light.png" alt="" height="20">
+                <img src="/assets/images/logo-light.png" alt="" height="20">
             </span>
         </a>
     </div>
@@ -44,6 +44,34 @@
                     <a href="{{route('phase')}}">
                         <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">02</span>
                         <span>Phase</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('building')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">03</span>
+                        <span>Buildings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('floor')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">04</span>
+                        <span>Floor</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('type')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">05</span>
+                        <span>Type</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{route('flat')}}">
+                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">06</span>
+                        <span>Flat</span>
                     </a>
                 </li>
 
