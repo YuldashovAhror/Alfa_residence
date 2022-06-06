@@ -1,6 +1,7 @@
 <x-app-layout>
     <div class="col-12">
         <div class="card">
+<<<<<<< HEAD
             <form action="{{route('flat.store')}}" method="POST">
                 @csrf
                 <div class="card__handler">
@@ -20,12 +21,29 @@
                             <br>
                             <input class="input" type="text" name="name">
                         
+=======
+            <form action="/action_page.php">
+                <div class="card__handler">
+                    <div class="first__card">
+                        <h1>The Phase elements</h1>
+
+                            <label for="cars">Choose a Phase:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                    
+>>>>>>> 799ae6025dec5f5e52cff383305bbed876583956
                     </div>
 
                     <div class="second__card">
                         <h1>The Building element</h1>
 
                         
+<<<<<<< HEAD
                             <label for="building">Choose a Building:</label>
                             <select name="building" id="building">
                                 <option value="{{null}}">Building</option>
@@ -39,11 +57,23 @@
                             <br>
                             <input class="input" type="text" name="size">
                         
+=======
+                            <label for="cars">Choose a Building:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                    
+>>>>>>> 799ae6025dec5f5e52cff383305bbed876583956
                     </div>
 
                     <div class="third__card">
                         <h1>The Floor element</h1>
 
+<<<<<<< HEAD
                         
                             <label for="floor">Choose a Floor:</label>
                             <select name="floor" id="floor">
@@ -77,6 +107,48 @@
                     <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem "  >Add</button>
             </form>
 
+=======
+                    
+                            <label for="cars">Choose a Floor:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                        
+                    </div>
+
+                    <div class="fourth__card">
+                        <h1>The Type element</h1>
+
+                    
+                            <label for="cars">Choose a Type:</label>
+                            <select name="cars" id="cars">
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="opel">Opel</option>
+                                <option value="audi">Audi</option>
+                            </select>
+                            
+                        </div>
+                    </div>
+                    <div>
+                        <label for="name">Flat Name</label>
+                        <input type="text" name="name">
+                    </div>
+                    
+                    <div>
+                        <label for="name">Flat Quantity</label>
+                        <input type="text" name="quantity">
+                    </div>
+                    
+                </div>
+            </div>
+
+            </form>
+>>>>>>> 799ae6025dec5f5e52cff383305bbed876583956
         </div>
         <style>
             .card__handler {
@@ -108,4 +180,8 @@
             }
         </style>
     </div>
+
+
+
+
 </x-app-layout>
