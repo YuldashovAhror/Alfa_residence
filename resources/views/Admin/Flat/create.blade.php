@@ -1,34 +1,93 @@
 <x-app-layout>
-<div class="card-body">
-    <form action="{{route('flat.store')}}" method="post">
-        {{ csrf_field() }}
-        <h1>Category</h1>
-        <div class="form-group container-fluid d-flex justify-content-between align-items-end" style="padding: 0px">
-            <div class="form-group" style="width: 80%; padding-right: 5px;">
-                <label for="exampleInputEmail1">Category name</label>
-                {{-- <select name="cat_name" id="" class="form-control">
-                    <option value="{{null}}">Select</option>
-                    @foreach(\App\Models\Category::all() as $category)
-                        <option value="{{ $category->id }}">{{ $category->name_uz }}</option>
-                    @endforeach
-                </select> --}}
-            </div>
-            <div class="" style="width: 80%; padding: 0 5px;" >
-                <label for="category_add">Name Uz</label>
-                <input type="text" class="form-control" id="category_add" name="cat_name_uz" placeholder="Add category ...">
-            </div>
-            {{-- <div class="" style="width: 80%; padding-right: 5px; padding-left:5px" >
-                <label for="category_add">Name Ru</label>
-                <input type="text" class="form-control" id="category_add" name="cat_name_ru" placeholder="Add category ...">
-            </div>
-            <div class="" style="width: 80%; padding: 0 5px;" >
-                <label for="category_add">Name En</label>
-                <input type="text" class="form-control" id="category_add" name="cat_name_en" placeholder="Add category ...">
-            </div>
+    <div class="col-12">
+        <div class="card">
+            <div class="card__handler">
+                <div class="first__card">
+                    <h1>The select element</h1>
 
-            <input name="btn" value="Saqlash" class="bg-primary" style=" height: 37px; font-size: 16px; color: #fff; border: none; border-radius: 5px;"  type="submit">
-            <input name="btn" value="Delete" class="bg-danger" style=" height: 37px; font-size: 16px; color: #fff; border: none; border-radius: 5px;"  type="submit"> --}}
+                    <form action="/action_page.php">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <div class="second__card">
+                    <h1>The select element</h1>
+
+                    <form action="/action_page.php">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <div class="third__card">
+                    <h1>The select element</h1>
+
+                    <form action="/action_page.php">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <div class="fourth__card">
+                    <h1>The select element</h1>
+
+                    <form action="/action_page.php">
+                        <label for="cars">Choose a car:</label>
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
-</div>
-</x-app-layout> 
+        <style>
+            .card__handler {
+                padding: 1rem 13rem 1rem 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            h1{
+                margin-bottom: 1.5rem;
+                font-size: 1.2rem;
+            }
+            label{
+                font-size: 1rem;
+                margin-right: 0.5rem;
+            }
+            select{
+                border-radius: 1rem;
+            }
+            #cars {
+                width: 7rem;
+            }
+        </style>
+    </div>
+</x-app-layout>
