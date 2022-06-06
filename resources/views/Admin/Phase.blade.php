@@ -2,8 +2,6 @@
     <div class="card">
         <div class="card-body">
 
-            <button style="">Green</button>
-
-                  
+            <button style="">Green</button>          
 </div>
 </x-app-layout>    
