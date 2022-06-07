@@ -40,14 +40,14 @@
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="{{route('phase')}}">
                         <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">02</span>
                         <span>Phase</span>
                     </a>
-                </li>
+                </li> --}}
 
-                <li>
+                {{-- <li>
                     <a href="{{route('building')}}">
                         <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">03</span>
                         <span>Buildings</span>
@@ -59,7 +59,7 @@
                         <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">04</span>
                         <span>Floor</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="{{route('type')}}">

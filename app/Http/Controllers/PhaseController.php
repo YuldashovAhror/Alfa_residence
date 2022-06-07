@@ -13,9 +13,9 @@ class PhaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $phases = Phase::orderBy('updated_at','desc')->get();
-        return view('Admin.Phase.index',['phases'=>$phases]);
+        return view('dashboard',['phases'=>$phases]);
     }
 
     /**
