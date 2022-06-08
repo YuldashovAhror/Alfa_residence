@@ -16,7 +16,11 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
+<<<<<<< HEAD
                                     <h5 class="modal-title" id="myModalLabel">Добавить фазу</h5>
+=======
+                                    <h5 class="modal-title" id="myModalLabel">Phase Qo'shish</h5>
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                     </button>
                                 </div>
@@ -72,9 +76,15 @@
                         <div>
                             <form>
                             <div>
+<<<<<<< HEAD
                                 <label for="cars">Phases:asd</label>
                                 <select name="phase">
                                     {{--<option value="{{null}}">Select Phase</option>--}}
+=======
+                                <label for="cars">Phases:</label>
+                                <select name="phase">
+                                    <option value="{{null}}">Select Phase</option>
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
                                     @foreach($phases as $phase)
                                         <option value="{{$phase->id}}">{{$phase->name}}</option>
                                     @endforeach

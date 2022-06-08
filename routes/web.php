@@ -6,12 +6,16 @@ use App\Http\Controllers\FlatController;
 use App\Http\Controllers\PhaseController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\FloorController;
+<<<<<<< HEAD
 use App\Http\Controllers\Front\ProductsController;
 use App\Http\Livewire\Dashboard;
 use App\Models\Building;
 use App\Models\Flat;
 use App\Models\Floor;
 use App\Models\Phase;
+=======
+use App\Http\Livewire\Dashboard;
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +55,13 @@ Route::middleware([
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
 
+<<<<<<< HEAD
 Route::resources([
     'words' => \App\Http\Controllers\WordsController::class,
 ]);
 
+=======
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
 ////// Type ///////
 Route::get('/type',[TypeController::class,'index'])->name('type');
 Route::get('/type/create',[TypeController::class,'create'])->name('type.create');
@@ -79,6 +86,7 @@ Route::post('/building',[BuildingController::class,'store'])->name('building.sto
 
 Route::post('/floor',[FloorController::class,'store'])->name('floor.store');
 
+<<<<<<< HEAD
 Route::get('choose', function(){
     $request = request();
     if($request->phase){
@@ -112,3 +120,6 @@ Route::get('choose', function(){
     return view('choose', compact('flats'));    
 
 });
+=======
+
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4

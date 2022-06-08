@@ -22,8 +22,13 @@
                 </div>
 
                 <div class="second__card">
+<<<<<<< HEAD
                     <h1>Эдани</h1>
                         <label for="building">Эдани:</label>
+=======
+                    <h1>The Building element</h1>
+                        <label for="building">Choose a Building:</label>
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
                         <select name="building" id="building">
                             <option value="{{null}}">Building</option>
                             @foreach($buildings as $building)
@@ -72,7 +77,11 @@
                         </div>
                     </div>
 
+<<<<<<< HEAD
                     <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem ">Сохранить</button>
+=======
+                    <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem ">Add</button>
+>>>>>>> 3613e0a65028bb77f932c81167df7b0e302d19f4
             </form>
         </div>
     </div>
