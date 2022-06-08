@@ -2,23 +2,23 @@
 
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <a href="index.html" class="logo logo-dark">
+        <a href="/" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="/assets/images/logo-sm.png" alt="" height="22">
+                <img src="/img/logo.svg" alt=""  style="height: 80px">
             </span>
             <span class="logo-lg">
-                <img src="/assets/images/logo-dark.png" alt="" height="20">
+                <img src="/img/logo.svg" alt="" style="height: 70px; margin-top: 10px">
             </span>
         </a>
 
-        <a href="index.html" class="logo logo-light">
-            <span class="logo-sm">
-                <img src="/assets/images/logo-sm.png" alt="" height="22">
-            </span>
-            <span class="logo-lg">
-                <img src="/assets/images/logo-light.png" alt="" height="20">
-            </span>
-        </a>
+        {{--<a href="index.html" class="logo logo-light">--}}
+            {{--<span class="logo-sm">--}}
+                {{--<img src="/img/logo.svg" alt="" height="15">--}}
+            {{--</span>--}}
+            {{--<span class="logo-lg">--}}
+                {{--<img src="/img/logo.svg" alt="" height="15">--}}
+            {{--</span>--}}
+        {{--</a>--}}
     </div>
 
     <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
@@ -35,76 +35,32 @@
 
                 <li>
                     <a href="{{route('dashboard')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">01</span>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{route('phase')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">02</span>
-                        <span>Phase</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{route('building')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">03</span>
-                        <span>Buildings</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{route('floor')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">04</span>
-                        <span>Floor</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{route('type')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">05</span>
-                        <span>Type</span>
+                        <i class="uil-home-alt"></i>
+                        <span>Главная</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="{{route('flat')}}">
-                        <i class="uil-home-alt"></i><span class="badge rounded-pill bg-primary float-end">06</span>
-                        <span>Flat</span>
+                        <i class="fa fa-door-open"></i>
+                        <span>Квартиры</span>
                     </a>
                 </li>
 
-                {{-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="uil-window-section"></i>
-                        <span>Layouts</span>
+                <li>
+                    <a href="{{route('type')}}">
+                        <i class="fa fa-door-open"></i>
+                        <span>Тип</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">Vertical</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-dark-sidebar.html">Dark Sidebar</a></li>
-                                <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                                <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                                <li><a href="layouts-boxed.html">Boxed Width</a></li>
-                                <li><a href="layouts-preloader.html">Preloader</a></li>
-                                <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
-                            <ul class="sub-menu" aria-expanded="true">
-                                <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                <li><a href="layouts-hori-topbar-dark.html">Topbar Dark</a></li>
-                                <li><a href="layouts-hori-boxed-width.html">Boxed Width</a></li>
-                                <li><a href="layouts-hori-preloader.html">Preloader</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> --}}
+                </li>
 
-                
+                <li>
+                    <a href="/words">
+                        <i class="bx bx-globe"></i>
+                        <span>Словарь</span>
+                    </a>
+                </li>
+
 
             </ul>
         </div>

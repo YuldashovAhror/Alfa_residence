@@ -1,17 +1,161 @@
-<x-app-layout>
+<x-app-layout>                        
 
-                           
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div style="display:flex; align-items: center;  justify-content: space-between;">
 
+                        <a href="" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal" style="margin-right: 0px; margin-bottom: 20px; border-radius: 1.5rem; margin-top: 1rem">Add Phase</a>
+                        <a href="" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal_building" style="margin-right: 0px; margin-bottom: 20px; border-radius: 1.5rem; margin-top: 1rem;">Add Building</a>
+                        <a href="" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal_floor" style="margin-right: 22rem; margin-bottom: 20px; border-radius: 1.5rem; margin-top: 1rem;">Add Floor</a>
+                    </div>
+
+
+                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="myModalLabel">Добавить фазу</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="{{ Route('phase.store') }}" method="POST">
+                                        @csrf
+                                        <div class="" style="width: 80%;" >
+                                            <label for="name">Name</label>
+                                            <input type="text"class="form-control" id="name" name="name" placeholder="Add Phase name ..." style="border-radius: 1rem">
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary" style="margin: 10px 10px 15px 20px; background-color: blue">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="myModal_building" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel_building" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="myModalLabel_building">Building Qo'shish</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    {{-- <form action="{{ Route('building.store') }}" method="POST">
+                                        @csrf
+                                        <select name="phase">
+                                            <option value="{{null}}">Select</option>
+                                            @foreach($phases as $phase)
+                                                <option value="{{$phase->id}}">{{$phase->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="" style="width: 80%;" >
+                                            <label for="name">Name</label>
+                                            <input type="text"class="form-control" id="name" name="name" placeholder="Add Building name ...">
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="btn btn-primary" style="margin: 10px 10px 15px 20px">Submit</button>
+                                        </div>
+                                    </form> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <div style="display: flex; padding-left:2rem; margin-top: 1.1rem">
+                        <div>
+                            <form>
+                            <div>
+                                <label for="cars">Phases:asd</label>
+                                <select name="phase">
+                                    {{--<option value="{{null}}">Select Phase</option>--}}
+                                    @foreach($phases as $phase)
+                                        <option value="{{$phase->id}}">{{$phase->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div>
+                                <div>
+                                    <h1  style="padding-top: 2rem">Edit Phase:</h1>
+                                    <input type="text" name="name" style="margin-top:0.7rem; width:19rem; border-radius: 2rem">
+                                    <div style="padding-top: 1rem; margin-left:8rem; ">
+                                        <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem; border-radius: 1rem ">Update</button>
+                                        <button type="submit" class="btn btn-danger" style="background-color:rgb(248, 6, 31); margin:0 0 1rem 0.3rem; border-radius: 1rem ">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+
+                        <div style="padding-left:5.5rem">
+                            
+                            <div>
+                                
+                                <label for="cars">Building:</label>
+                                <select name="cars" id="cars" style="border-radius: 1rem; width: 10rem">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <h1  style="padding-top: 2rem">Edit Building:</h1>
+                                    <input type="text" name="name" style="margin-top:0.7rem; width:19rem; border-radius: 2rem">
+
+                                    <div style="padding-top: 1rem; margin-left:8rem; ">
+                                        <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem; border-radius: 1rem ">Update</button>
+
+                                        <button type="submit" class="btn btn-danger" style="background-color:rgb(248, 6, 31); margin:0 0 1rem 0.3rem; border-radius: 1rem ">Delete</button>
+
+                                    </div>
+
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                        <div style="padding-left:5.5rem">
+                            <div>
+                                
+                                <label for="cars">Floor:</label>
+                                <select name="cars" id="cars" style="border-radius: 1rem; width: 10rem">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <div>
+                                    <h1  style="padding-top: 2rem">Edit Floor:</h1>
+                                    <input type="text" name="name" style="margin-top:0.7rem; width:19rem; border-radius: 2rem">
+
+                                    <div style="padding-top: 1rem; margin-left:8rem; ">
+                                        <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem; border-radius: 1rem ">Update</button>
+
+                                        <button type="submit" class="btn btn-danger" style="background-color:rgb(248, 6, 31); margin:0 0 1rem 0.3rem; border-radius: 1rem ">Delete</button>
+
+                                    </div>
+
+                                </div>
+
+                                
+                            </div>
+                        </div>
 
                         
-
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Latest Transaction</h4>
-
-                                        
+                    </div>
                                         {{-- <div class="table-responsive">
                                             <table class="table table-centered table-nowrap mb-0">
                                                 <thead class="table-light">
@@ -200,12 +344,8 @@
                                             </table>
                                         </div> --}}
                                         <!-- end table-responsive -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-
-                    </div> <!-- container-fluid -->
+                </div>
+            </div>
+        </div>
+    </div>
 </x-app-layout>

@@ -45,8 +45,8 @@ class FloorController extends Controller
     public function store(Request $request)
     {
         $floors = new Floor;
-        $floors->building_id = $request->building;
-        $floors->phase_id = $request->phase;
+        $floors->building_id = $request->building_id;
+        $floors->phase_id = Building::find($request->building_id)->id;
         $floors->name = $request->name;
         $floors->save();
         return redirect()->back();

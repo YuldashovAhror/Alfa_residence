@@ -7,9 +7,9 @@
                 @csrf
                 <div class="card__handler">
                     <div class="first__card">
-                        <h1>The Phase element</h1>
+                        <h1> Фаэу </h1>
 
-                            <label for="phase">Choose a Phase:</label>
+                            <label for="phase">Фаэу:</label>
                             <select name="phase" id="phase">
                                 <option value="{{null}}">Phase</option>
                                 @foreach($phases as $phase)
@@ -25,10 +25,10 @@
                     </div>
 
                     <div class="second__card">
-                        <h1>The Building element</h1>
+                        <h1>Эдани</h1>
 
                         
-                            <label for="building">Choose a Building:</label>
+                            <label for="building">Эдани:</label>
                             <select name="building" id="building">
                                 <option value="{{null}}">Building</option>
                                 @foreach($buildings as $building)
@@ -44,10 +44,10 @@
                     </div>
 
                     <div class="third__card">
-                        <h1>The Floor element</h1>
+                        <h1>Этаж</h1>
 
                         
-                            <label for="floor">Choose a Floor:</label>
+                            <label for="floor">Этаж:</label>
                             <select name="floor" id="floor">
                                 <option value="{{null}}">Floor</option>
                                 @foreach($floors as $floor)
@@ -62,9 +62,9 @@
                     </div>
 
                     <div class="fourth__card" class="name" style="margin-top: -6rem">
-                        <h1>The Type element</h1>
+                        <h1>Tип</h1>
 
-                            <label for="type">Choose a Type:</label>
+                            <label for="type">Tип:</label>
                             <select name="type" id="type">
                                 <option value="{{null}}">Type</option>
                                 @foreach($types as $type)
@@ -76,7 +76,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem ">Update</button>
+                    <button type="submit" class="btn btn-primary" style="background-color:blue; margin:0 0 1rem 1rem ">Сохранить</button>
             </form>
 
         </div>
